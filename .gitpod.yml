@@ -1,0 +1,14 @@
+tasks:
+- name: default terminal
+  before: npm install npm@latest -g
+  init: echo " initialization"
+  command: echo "running that command now"
+
+- name: wasmify
+  before: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+  command: wasm-pack build 
+
+- name: www rocket
+  before: npm install
+  command: npm run start
+
